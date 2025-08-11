@@ -5,9 +5,10 @@ alias gl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %
 alias gas="git add -A && git status"
 alias gc="git commit -m"
 alias gca="git commit --amend --no-edit"
-alias grf="git restore"                     # Restore a specific file
-alias grs="git restore --staged"            # Unstage file
+alias gr="git restore"                      # Restore a specific file
 alias grall="git restore ."                 # Restore all working dir changes
+alias grs="git restore --staged"            # Unstage file
+alias grsall="git restore --staged ."       # Unstage all files
 alias grshh="git reset HEAD --hard"         # Discard all changes in working directory and staging area (restore to last commit)
 alias grsh1="git reset HEAD~1"              # Undo last commit (soft)
 alias gcln='git clean -fd'
