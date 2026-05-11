@@ -17,8 +17,7 @@ alias gnewbr="git switch -c"
 alias gdelbr="git branch -D"
 alias gbr="git branch"
 alias gbra="git branch -a"
-alias gplr="git pull -r && git --no-pager log -15 --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)[%an]%Creset' --abbrev-commit"
-alias gplrom="git pull -r origin $(gdefault)"
+alias gplr="git pull -r"
 alias gpso="git push -u origin HEAD"
 alias gmrs="git merge --squash"
 alias gsu="git stash -u"
@@ -30,6 +29,11 @@ alias gusada="git ls-files -m | xargs git update-index --skip-worktree"
 alias gusrma="git ls-files -v | grep '^S' | cut -c 3- | xargs git update-index --no-skip-worktree"
 alias gbfco="gusrma && gsu"
 alias gafco="gsp && gusada"
+
+# Pull and rebase
+function gplrom() {
+  git pull -r origin "$(gdefault)";
+}
 
 # Switch to main and pull latest
 function gswm() {
@@ -48,7 +52,8 @@ function gcfull() {
 }
 
 # general aliases
-alias reload="source ~/.bashrc"
+alias reload="source ~/.zshrc"
+alias zshrc="code ~/.zshrc"
 alias bashrc="code ~/.bashrc"
 
 # docker aliases
